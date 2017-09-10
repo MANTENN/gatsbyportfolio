@@ -1,105 +1,407 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
-<meta name="author" content="Nazar Maksymchuk">
-<meta name="description" content="Web Developer from Sacramento, CA">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>Nazar Maksymchuk - Portfolio</title>
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<style>
-* {margin:0;padding:0;}
-body {
-	color:#F2F2F2;
-	font: 1em Arial, Helvetica, sans-serif;
-	word-wrap:break-word;
-	padding:15px;
-	background-color:#0E2530;
-}
-.social-media a {
-	font-size:1.7em;
-}
-section {
-	margin: 15px auto;
-	max-width: 1200px;
-	padding: 15px;
-	border: 2px solid #11425A;
-	background-color:#103547;
-	box-shadow:0 0 45px rgba(0,0,0,.15);
-}
-a {
-	color:#1BAEF1;
-	text-decoration:none;
-	text-shadow: 0 10px 28px rgba(47,147,241,.5);
-}
-a:hover {
-	color:#1BB8FF;
-}
-h1 {
-	font-size: 4em;
-	font-weight:100;
-	padding-bottom: 10px;
-}
-div:first-child p {
-	font-size:1.5em;
-}
-h2 {
-	font-size: 1.5em;
-	font-weight:100;
-	padding-bottom: 10px;
-}
-h3 {
-	padding-bottom:5px;
-}
-hr {
-	height:2px;
-	background-color:#104159;
-	max-width:350px;
-	border:none;
-	margin: 25px 0;
-}
+<html>
+  <head>
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  </head>
+  <body>
+    <style>
+    @import url('https://fonts.googleapis.com/css?family=Droid+Serif:400,400i,700,700i');
+      body {
+        background: #bbb;
+        font-family: 'Droid Serif', serif;
+        margin: 0;
+        padding: 0;
+      }
+      ul {
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        text-decoration: none;
+      }
+      header {
+        color: #fff;
+        height: 100px;
+        overflow: auto;
+        background-color: #444;
+      }
+      header.fixed {
+        width: 100%;
+        position: fixed;
+      }
+      header.fixed + section {
+        padding-top:110px;
+      }
+      header h1 {
+        margin: 0;
+        padding-top: 8px;
+        height:40px;
+        overflow-x: auto;
+      }
+      header nav {
+        border-top: 2px solid #555;
+        height:50px;
+        overflow-x: auto;
+      }
+      header nav ul,header nav h1 span {
+        width: 10000%;
+      }
+      header:after {
+        content: '';
+        clear: both;
+      }
+      header nav li {
+        float: left;
+        list-style: none;
+      }
+      header nav li a {
+        color: #fff;
+        padding:0 20px;
+        line-height: 50px;
+        display: block;
+      }
+      header nav li a:hover {
+        background: #555;
+      }
+      .container {
+        margin: auto;
+        max-width: 1200px;
+        padding: 5px;
+      }
+      .timer {
+        padding: 10px;
+        background: #6b95b5;
+      }
+      .timer .container:after {
+        content: "";
+        clear: both;
+      }
+      .timer-text {
+        float:left;
+      }
+      #timer-mins:after {
+        content: ':';
+      }
+      .question {
+        padding-top:100px;
+        margin-top:-100px;
+      }
+      .highlight {
+        background: rgba(255,255,0,.4);
+      }
+      .container.note p {
+        padding: 5px;
+        margin: 0;
+        border: 2px orange solid;
+        background: yellow;
+      }
+      section img {
+        width: 100%;
+      }
+    </style>
+    <header class="fixed">
+      <div class="container">
+        <h1><span>Study Guide: History of United States to 1877</span></h1>
+        <nav>
+          <ul>
+            <li><a href="#q1">1</a></li>
+            <li><a href="#q2">2</a></li>
+            <li><a href="#q3">3</a></li>
+            <li><a href="#q4">4</a></li>
+            <li><a href="#q5">5</a></li>
+            <li><a href="#q6">6</a></li>
+            <li><a href="#q7">7</a></li>
+            <li><a href="#q8">8</a></li>
+            <li><a href="#q9">9</a></li>
+            <li><a href="#q10">10</a></li>
+            <li><a href="#q11">11</a></li>
+            <li><a href="#q12">12</a></li>
+            <li><a href="#q13">13</a></li>
+            <li><a href="#q14">14</a></li>
+            <li><a href="#q15">15</a></li>
+            <li><a href="#q16">16</a></li>
+            <li><a href="#q17">17</a></li>
+            <li><a href="#q18">18</a></li>
+            <li><a href="#q19">19</a></li>
+            <li><a href="#q20">20</a></li>
+            <li><a href="#q21">21</a></li>
+            <li><a href="#q22">22</a></li>
+            <li><a href="#q23">23</a></li>
+            <li><a href="#q24">24</a></li>
+            <li><a href="#q25">25</a></li>
+            <li><a href="#q26">26</a></li>
+            <li><a href="#q27">27</a></li>
+            <li><a href="#q28">28</a></li>
+            <li><a href="#q29">29</a></li>
+            <li><a href="#q30">30</a></li>
+            <li><a href="#q31">31</a></li>
+            <li><a href="#q32">32</a></li>
+            <li><a href="#q33">33</a></li>
+            <li><a href="#q34">34</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <section class="timer">
+      <div class="container">
+        <div class="timer-text">
+          <span id="timer-mins">00</span>
+          <span id="timer-seconds">00</span>
+        </div>
+        <div class="timer-btns">
+          <button id="ts">Study</button>
+          <button id="tb">Break</button>
+        </div>
+      </div>
+      <script>
+      var btn = {
+        "study": document.getElementById("ts"),
+        "break": document.getElementById("tb")
+      }
+      btn.study.addEventListener("click",timer.study, true);
+      btn.study.addEventListener("click",timer.break, true);
+      function timer() {
+        this.timer = false;
+      }
+      timer.prototype.begin = function (m) {
 
-
-	border:none;
-	margin: 25px 0;
-}
-</style>
-</head>
-<body>
-<section>
-<div>
-<h1><a href="/">@nmaksymchuk</a></h1>
-<p>Freelancer.</p>
-<span class="social-media">
-<a href="http://github.com/MANTENN" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
-<a href="http://linkedin.com/in/nmaksymchuk" target="_blank"><i class="fa fa-linkedin"></i></a>
-<a href="http://www.twitter.com/mantennn" target="_blank"><i class="fa fa-twitter"></i></a>
-<a href="mailto:nzrbeats@gmail.com" target="_blank"><i class="fa fa-envelope-o"></i></a>
-</span>
-</div>
-<hr>
-<div>
-<h2>Personal Projects</h2>
-	<span style="display:none">
-		<h3><a href="http://mantenos.ga/">MantenOS</a></h3>
-		<p>Old portfolio.</p>
-	</span>
-	<span>
-		<h3><a href="https://www.youtube.com/channel/UC_rgNY-G6p8wjNOnyYZii4A">Вдохновенный Христианские песни</a></h3>
-		<p>YouTube channel I created to upload heart touching music along with lyrics.</p>
-	</span>
-</div>
-<hr >
-<div>
-<h2>Non-profit</h2>
-	<span>
-		<h3><a href="http://days4god.com">Days4God</a></h3>
-		<p>Designed a elegant logo for Brand Identity, manage website, debug problems with the website and moderate content.</p>
-	</span>
-</div>
-<hr>
-<p>&copy; 2017 - Nazar Maksymchuk</p>
-</section>
-</body>
+      }
+      timer.prototype.study = function () {
+        timer.begin(25)
+      };
+      timer.prototype.break = function () {
+        timer.begin(5);
+      }
+      </script>
+    </section>
+    <div class="container note">
+      <p>Note: Reorganize by Location > Time : INCOMPLETE!!!</p>
+    </div>
+    <div class="container">
+      <article class="chapter" id="ch1">
+        <section class="question" id="q1">
+          <h2>Cahokia: describe its features</h2>
+          <p>10th-14th Century</p>
+          <p>Peak - covered 6 miles along the Mississippi River</p>
+          <p>Farmers - participants of a complex agricultural culture,"Mississipian"</p>
+          <p>Urban Cluster of 20K or 30K people in 13th Century</p>
+          <p>Complex Aggriculture termed as <a href="#terms">"Mississpian"</a></p>
+          <p>Had a Temple; huge pyramid - base of 15 acres and height of 100ft</p>
+          <p>Center of long distance Trading</p>
+          <p>Copper from Lake Superior, Mica from southern Appalachians & Conch shelss from the Atlantic Coast</p>
+          <p>Specialised craftsmen - known for high-quality flint hoes; exported through out the Missipi Valley</p>
+          <p>City closed with logs in 13th&14th century ~> violence
+        </section>
+        <section class="analysis" id="q1a">
+          <p>Similiar to other large cities in Eastern Hemisphere. The temple was built to show case the wealth and power of the city.</p>
+        </section>
+        <section class="question" id="q2">
+          <h2>"Indian" as a term</h2>
+          <p>covers the diversity of native American people</p>
+          <p class="explanation">Similiar to the term "Europeans"</p>
+        </section>
+        <section class="question" id="q3">
+          <h2>Number of Indian Cultures by European contact(1490s)</h2>
+          <p>More than 2K seperate cultures</p>
+        </section>
+        <section class="question" id="q4">
+          <h2>1590, Joseph de Acosta Theory</h2>
+          <p>people followed animals from Asia over to Alaska by a land bridge, <strong>beringia</strong>
+          <h2>Beringia</h2>
+          <p>huge subcontinent of ice-free, treeless grassland - connected Asia and North America</p>
+          <p>Last Ice Age created lower sea levels as low as 300ft</p>
+          <p>Now Seperated by Bering Strait</p>
+          <p>Land in south covered with ice</p>
+          <p>1st wave - Theory: Global Warming after Ice Age created an ice-free-corridor("Pan-American Highway")</p>
+          <p>Recent discoveries complicated P.A.H hypothesis, people in these settlements moved south in boats along the coast - "Pacific Coast Highway"</p>
+          <p>2nd wave - Athapascan People moved across the beringa ~ 5000 BCE</p>
+          <p>3rd, last - maritime hunting people crossed te Bering Strait in small boats ~ 3000 BCE</p>
+        </section>
+        <section class="question" id="q5">
+          <h2>Clovis Culture</h2>
+          <p>fulted blades and lance points - more sophisticated than European bows ~ 11,000 years</p>
+          <p>Clovis Technology spread quickly throughout the continent</p>
+          <p>Bands of mobile foragers - 30 to 50 individuals from several interrelated families</p>
+          <p>Migrated Seasonally around the same area</p>
+          <p>Camped at places attractive to animals/prey</p>
+        </section>
+        <section class="question" id="q6">
+          <h2>Division of Labor by Gender</h2>
+          <p>Nomadic/Foraging Communities; Hunting was mens work - gathering and maintening home was Womens</p>
+          <p>After was Farming Developed, where hunting was required - women took responsibility for growing food but were communities dependandent on crops, men and women worked on fields</p>
+        </section>
+        <section class="question" id="q7">
+          <h2>Anasazi Cultrual Area Size(Pueblo Bonito Features)</h2>
+          <p>Best-know ancient farming culture Southwest, the Four Corners - Arizona, Utah, Colorado and New Mexico, developed in the 1st century.</p>
+          <p>~750CE residents of communities shifted from pit-houses to multistoried apartment complexes("Pueblos" called by Spanish)</p>
+          <p>Extended over a Large Area - more than 25K Anasazi communities are known in New Mexico alone.</p>
+          <p>Pueblo Bonito(most prominent out of others) in Chaco Canyon - Completed in 12th Century, set of 700 interconnected rooms, monument to the region and time.</p>
+          <p>1276-1293 Drought and increasd population = crop failures</p>
+          <p>14th Century - Athapascan immigrants arrived and raided Anasazi farming communities, took food, goods and possibly slaves.</p>
+          <p>Gradually they left the 4 corners most resettled along the Rio Grande river, joining Locals to form the Pueblo Communities that were living there when the Spanish arrived.</p>
+        </section>
+        <section class="question" id="q8">
+          <div class="qcontext">
+            <h2>The Southwest</h2>
+            <p>dry(not much rain)</p>
+            <p>rivers(flowed south) => irrigation => farming</p>
+            <p>cultivated fields for ~3k yrs(on European Arrival)</p>
+            <p>corn, bean, squash, sunflowers & cotton - traded throughout S.W</p>
+            <p>lived in rancherias - dwellings seperated ~ by 1 mile</p>
+            <p>governed by councils(men) - decisions req. unanimous consent - headman chosen to manage irrigation</p>
+          </div>
+          <h2>Hohokam Culture</h2>
+          <p>Floodplain of Salt and Gila Rivers in southern Arizona(near Phoenix)</p>
+          <p>1st Millennium BCE - lived in farming villages</p>
+          <p>built and maintained the first irrigation system in America, 500 miles</p>
+          <p>grew maize, beans, squash, tobacco and cotton in the desert</p>
+          <p>Shared many traits with Mesoamerican civilisation south of it, platform mounds for religious ceremonies and large courts for ball playing</p>
+          <p>Pimas and Tohono O'Odhams = descedants</p>
+        </section>
+        <section class="question" id="q9">
+          <h2>Missisipean society</h2>
+          <p>Bow and arrow first developed in the Great Plains, appeared east of Mississippi River in 7th Century - increased efficiency</p>
+          <p>Maize farming spread rapidly through the East in 7th century</p>
+          <p>~7th Century digging sticks -> hoes</p>
+          <p>>7th or 8th Century</p>
+          <p>master maize farmers</p>
+          <p>Mississippi Valley - flood plains</p>
+          <p>Cahokia largest</p>
+          <p>dozens of communities with thousands of residents</p>
+          <p>linked by Mississippi River and its streams - earliest city-states; heiracrchal cheifdoms with control over the farmers</p>
+          <p>Pop Growth -> violent competition - need for orderly comp. may have simulated evolution of political heirarchies</p>
+          <p>peaked 11th-13th century</p>
+          <p>complex societies; urbanism, social stratification, craft specilization, and regional trade</p>
+          <p>org. violence = rare</p>
+          <p>Warfare(in farming confederacies) to get more farming lands</p>
+          <p>Raided by Athapascans</p>
+          <p>bad conditions/cities collapsed ~> ppl moved into smaller communities</p>
+          <p>South: Mississipean patterns of colonization cont.</p>
+          <p>Yuman People - Colorado River = called Rancherias by Spanish set/seperated of by a mile, lead by a head-man. Decisions req. unanimous consent</p>
+          <h3>The South</h3>
+          <p>Mild moist climate w/ short winters rand long summers - farming</p>
+          <p>prospered in 16th century - farming, fishing or hunting local fauna</p>
+          <p>lived in communities(villages ~ 20ppl to large towns ~ 1K|| < people)</p>
+          <p>farming towns, organized into cheifdoms</p>
+          <p>decimated by disease(1st year of colonization)</p>
+          <h2>the Natchez</h2>
+          <p>Arkansas</p>
+          <p>west bank of Mississippi River, Caddos on East</p>
+          <p>Ranked Society - ruled by a small group of nobility</p>
+          <p>persistent territorial confict => warriors to honored status</p>
+          <p>public sacrifice & torture of enemies = common</p>
+          <p>gives best glimpse into Cahokia</p>
+          <p>unstable <= climate change, pop growth & warfare</p>
+        </section>
+        <section class="question" id="q10">
+          <h2>Great Serpent Mound</h2>
+          <p>southern Ohio</p>
+          <p>shape of uncoiling snake > 3Kft</p>
+          <p>largest sculpture in the world</p>
+          <p>suggests high social organization of the Mississippian ppl</p>
+        </section>
+        <section class="question" id="q11">
+          <h2>Indian Population in the Western Hemisphere, 1491</h2>
+          <p>largest in the farming regions of the Southwest, South and Northeast</p>
+          <p>fishing was the second largest</p>
+          <p>Nomadic Groups were the smallest</p>
+          <p>varied <span class="highlight">A LOT</span> by region</p>
+          <p><span class="highlight">>= 50M</span>; ~ as European</p>
+        </section>
+        <section class="question" id="q12">
+          <h2>Oraibi, Arizona, Pueblo people(U.S. significance today)</h2>
+          <p>East of Grand Canyon</p>
+          <p>strict communal code reg. personal conduct - enforced by matrilineal(mother based) clans and secret religious societies -> governing systems of different pueblo villages</p>
+          <p>(U.S. significance today) = inhabit the oldest continiously occupied towns</p>
+          <h2>Oraibi</h2>
+          <p>dates to 12th century, Hopis("peaceful ones") founded it - isolated central mesas of the Colorado Plateau</p>
+          <p>used dry-farming methods and drought resistant plants</p>
+          <p>corn and squash</p>
+          <p>Spoke Several Languages</p>
+        </section>
+        <section class="question" id="q13">
+          <h2>Hiawatha Wampum Belt</h2>
+          <p>Haudenosaunee/Iroquois</p>
+          <p>ceremonial artifact; symbol of unity of five nations</p>
+          <p>~7K purple and white drilled shell beads, woven together with bucksin thongs and hemptread</p>
+          <p>Central/Heart, pointed up = Onondaga - where the council met</p>
+          <p>2 first squares = Mohawk and Oneida</p>
+          <p>3/4 = Cayuga and Seneca nations</p>
+          <p>early 18th century - design originated 6 centuries earlier within the confederacy</p>
+        </section>
+        <section class="question" id="q14">
+          <h2>The Northeast</h2>
+          <p>colder than south</p>
+          <p>variation of coastal plains & mountain highlands, great rivers, lakes & valleys</p>
+          <p>1st millennium - farming => priority of the economy where growing season became long enough to harvest corn</p>
+          <p>growing population & farming => violence => Hiawatha => Peace</p>
+          <p>Iroquois (pres. day Ontario and upstate NY) lived for > 4.5K years</p>
+          <p>first northeastern people to adopt cultivation</p>
+          <p>women farmed to support up to fifty longhouse - each occupied by a large matrileneal extended family</p>
+          <p>typically surrounded by wooden walls/palisades - evidence of conflict and warfare</p>
+          <p> < 11 Century, Concentration of Population moved from East to West coalesced into one.</p>
+          <h2>Haudosaunee Confederacy</h2>
+          <p>created to control the violence of Iroquia/Iroquios</p>
+          <p>Oral History => Chief Deganawida convinced 5 nations to agree to prohibit warfare/revenge and payment/gifts exchange instead</p>
+          <p>Huadenosaunee = "people of the longhouse"</p>
+          <p>each nation held seperate but acknowledge common roots</p>
+          <p><span class="highlight">women</span> choose male leaders - represented their lineages & cheifdoms on Iroquis Council</p>
+          <p>surpressed violence within; encouraged with neighboring Iroquios speakers - ex: Hurons or the Eries => own confederacy as defense
+        </section>
+        <section class="question" id="q15">
+          <h2>Historian, J.H. Parry, (Columbus discovery comment)</h2>
+          <p><span class="highlight">Claims didn't discover the New World, rather he established contact</span> among the two worlds(NW and OW) - both were old with their own unique history</p>
+        </section>
+      </article>
+      <article class="chapter" id="c2">
+        <section class="question" id="q15">
+          <h2>John White, Manteo & Wanchese, and the "Lost Colony"</h2>
+          <p>Roanoke Colony established 1585: railed sponsored a small group of adventurers - region densely populated by good Indians - greeted very well and personally welcomed by the Chief Wingia</p>
+          <p>At first were potential Allies to extend authority over more villages and sent Manteo and Wanchese to prepare the Enterprise</p>
+          <p>Responses to Chief</p>
+          <p><strong>Manteo</strong>(from Croatoan) - suggested English could be powerful allies</p>
+          <p><strong>Wanchese</strong> - disturbing inequalities among the English and potential Brutality towards them - was right(Raleigh wanted to exploit natives for $$$)</p>
+          <p>Chief didn't like English intentions, cut supply: Colonists surprise attacked in May 1586 & killed Several leaders => fled back to England</p>
+          <p><strong>J. White</strong> - proposed a colony of geniune settlers who'd live in harmony w/ natives</p>
+          <p>1587: He returns to Virginia as governer of the new Colony of 117 people, funded by Raleigh, landed among alienated Indians within 1 month colonist was shot w/ arrows</p>
+          <p>Colonists CounterAttack'd => Indians Fight back to expel them => J. White reluctantly left for additional support(Englang in War with Spain) => returned to America found destroyed houses and possessions scattered saw "Croatan" on a bark tree = name for Indian village 50mi South - was eager to go there; a storm hit and headed back to England by captain's advice</p>
+          <p>
+        </section>
+        <section class="question" id="q16">
+          <h2>John White, Manteo & Wanchese, and the "Lost Colony"</h2>
+          <p>Roanoke Colony established 1585: railed sponsored a small group of adventurers - region densely populated by good Indians - greeted very well and personally welcomed by the Chief Wingia</p>
+          <p>At first were potential Allies to extend authority over more villages and sent Manteo and Wanchese to prepare the Enterprise</p>
+          <p>Responses to Chief</p>
+          <p><strong>Manteo</strong>(from Croatoan) - suggested English could be powerful allies</p>
+          <p><strong>Wanchese</strong> - disturbing inequalities among the English and potential Brutality towards them - was right(Raleigh wanted to exploit natives for $$$)</p>
+          <p>Chief didn't like English intentions, cut supply: Colonists surprise attacked in May 1586 & killed Several leaders => fled back to England</p>
+          <p><strong>J. White</strong> - proposed a colony of geniune settlers who'd live in harmony w/ natives</p>
+          <p>1587: He returns to Virginia as governer of the new Colony of 117 people, funded by Raleigh, landed among alienated Indians within 1 month colonist was shot w/ arrows</p>
+          <p>Colonists CounterAttack'd => Indians Fight back to expel them => Colonist Beg for Backup =>J. White reluctantly left (England in War with Spain) => returned to find <u>"Croatoan"</u>(neighboring Indian village 50mi South) written on a bark tree</p>
+          <p>Saw no cross - assumed they survived and are waiting for him at Croatoan => Storm hits => returns to England</p>
+        </section>
+        <section class="question" id="q17">
+          <h2>Prince Henry "the Navigator"</h2>
+          <p>son of Portugals King - local merchant elected in 1385 by merchants in Lisbon; goal: establish a portuguese trading empire</p>
+          <p><strong>Prince Henry</strong> - established an academy of eminent geographers, instrument makers, ship builders & seamen.</p>
+          <p>studied Asian sea traditioans & incorporated them into a new ship: <u>Caravel</u></p>
+          <p>Promoted the use of Arab instruments for astronomical observations</p>
+          <p><b>Portugal</b> - explored the Atlantic coast of nort-western Africa for direct access to lucrative gold and slave trades</p>
+          <p>Established the Atlantic slave trade </p>
+          <p>Controlled:<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Portugal_Imp%C3%A9rio_total.png/1200px-Portugal_Imp%C3%A9rio_total.png"></p>
+        </section>
+        <section class="question" id="q18">
+          <h2>Columbus</h2>
+          <p>Shorter route to Indies(India) through Atlantic Ocean - landed on Bahamas(Oct 1492) with 3 vessels from Isabela & Ferdinand(Spain); others refused to fund</p>
+          <p>believed he reached Asia - explored the area</p>
+          <p>By chance, discovered <span class="highlight">clockwise rotation of the Atlantic Winds/Currents</span></p>
+          <h2>Taino Indians, 1492-1507</h2>
+          <p>Indians CAed the attacks => failure = Enslaved Indians & demanded gold</p>
+          <p>Abucted some & dressed them in Bright feathers with ornaments of gold; presented to Royal court</p>
+          <p><strong>Pop:</strong> 300K(1492), 30K ~ 1507,0(> 1520s)</p>
+        </section>
+      </article>
+    </div>
+  </body>
 </html>
