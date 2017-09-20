@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Wikipedia Viewer</title>
+</head>
+<body>
+<div class="container">
+  <div class="center"><a class="randomArticle" href="https://en.wikipedia.org/wiki/Special:Random" target="_blank">Random Article</a>
+    <input id="searchQuery" type="text" placeholder="What are we searching for?"/><span class="clearInput"></span>
+    <div class="searchItems"></div>
+  </div>
+</div>
+<script>
+'use strict'
+var protocol = document.URL.split(":")[0]
+var query = document.getElementById("searchQuery")
+var container = document.getElementsByClassName("container")[0]
+var s = {
+  language: navigator.language ? navigator.language.split("-")[0] : "en",
+  wikipedia: function(e) {
+    if(query == document.activeElement && e.keyCode == 13) {
+      var urlR = protocol + "://" + s.language + ".wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=" + query.value + "&callback=s./parseResults"
+      var wikipedia = document.createElement("script")
+      wikipedia.src = urlR
+      wikipedia.async = true
+      wikipedia.onerror = function(e) {
+        console.log(this, e)
+        this.parentNode.removeChild(wikipedia)
+      }
+      wikipedia.onload = function(e) {
+        console.log(this, e)
+        this.parentNode.removeChild(wikipedia)
+      }
+      container.parentNode.append(wikipedia)
+      var sItems = document.getElementsByClassName("searchItems")[0]
+      sItems.innerHTML = ""
+      container.className = container.className.split(/\s+/g)[0];
+    }
+  },
+  parseResults: function(data) {
+    var results = data.query.pages;
+    if(results)
+      for(var property in results) {
+        var result = document.createElement("div")
+        result.className = "searchItem"
+        result.innerHTML = "<a href=\"" + protocol + "://" + s.language + ".wikipedia.org/?curid=" + results[property].pageid + "\">\n" +
+                           "<h1>" + results[property].title + "</h1>\n" +
+                           "<p>" + results[property].extract + "</p>\n" + 
+                           "</a>"
+        s.renderResults(result)
+      }
+  },
+  renderResults: function(data) {
+    container.className = container.className + " searchResults"
+    var sItems = document.getElementsByClassName("searchItems")[0]
+    console.log(sItems)
+    sItems.appendChild(data)
+  },
+  clearPage: function (result) {
+    var sItems = document.getElementsByClassName("searchItems")[0]
+    sItems.innerHTML = "";
+    container.className = "container"
+  }
+} // end of search Object
+query.addEventListener("keypress", s.wikipedia, true)
+</script>
+<style class="cp-pen-styles">* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  color: #666;
+  font-size: 1em;
+  font-family: 'Merriweather', serif;
+  background-color: #ccc;
+}
+input[type="text"] {
+  display: block;
+  color: #666;
+  padding: 10px;
+  line-height: 10px;
+  min-width: 350px;
+  background-color: #fff;
+  border: 2px solid #666;
+  outline: none;
+}
+button#searchSubmit {
+  background-color: #fff;
+  border: 2px solid #fff;
+  padding: 10px;
+  line-height: 10px;
+}
+a {
+  color: #666;
+  text-decoration: none;
+  transition: all ease 0.5s;
+}
+a:hover {
+  color: #1baef1;
+}
+.container {
+  margin: auto;
+  max-width: 1200px;
+  padding: 352px;
+  transition: all ease 1s;
+}
+.container.searchResults {
+  padding: 15px;
+}
+.container .center {
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.container .center .randomArticle {
+  font-size: 18px;
+  padding: 5px;
+  width: 150px;
+  text-align: center;
+  display: block;
+  margin-bottom: 5px;
+  border: 2px solid #1baef1;
+}
+.container .center .randomArticle:hover {
+  color: #fff;
+  background-color: #1baef1;
+}
+.container .center .clearInput:before {
+  content: '';
+  height: 2px;
+  width: 10px;
+  background-color: #fff;
+}
+.container .center {
+  *display: inline;
+}
+</style>
+</body>
+</html>
