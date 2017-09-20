@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Twitch Streamers</title>
+</head>
+<body>
+
+<div class="container">
+  <div class="box">
+    <div class="header">
+      <h2>Twitch Streamers</h2>
+      <ul class="streams" id="stream-links">
+        <li class="active" id="s1">Featured</li>
+        <li id="s2">Online</li>
+        <li id="s3" alt="freeCodeCamp" title="freeCodeCamp">FCC</li>
+      </ul>
+      <div class="clear"></div>
+    </div>
+    <div class="content"></div>
+    <div class="footer">
+      <p>Made by <a href="https://codepen.io/mantenn">mantenn</a></p>
+    </div>
+  </div>
+</div>
+<style>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font: bold 1em "Arial", sans-serif;
+  background-color: #ccc;
+}
+.container {
+  max-width: 900px;
+  margin: auto;
+}
+.container .box {
+  background-color: #fff;
+}
+.container .box .header {
+  display: block;
+  padding: 15px;
+  padding-bottom: 0;
+  text-transform: uppercase;
+}
+.container .box .header h2 {
+  font-size: 2.5em;
+  font-family: 'Viga', sans-serif;
+  letter-spacing: 0.1em;
+  margin: 15px 0;
+}
+.container .box .header .streams {
+  margin: 0 -15px;
+  border-top: 2px solid #f1f1f1;
+  position: relative;
+  height: 3.5em;
+}
+.container .box .header .streams li.active:after {
+  content: '';
+  height: 4px;
+  width: 33.334%;
+  display: block;
+  bottom: 0px;
+  position: absolute;
+  background-color: #1baef1;
+}
+.container .box .header .streams li {
+  color: #666;
+  cursor: pointer;
+  text-align: center;
+  list-style: none;
+  float: left;
+  line-height: 3.5em;
+  width: 33.334%;
+  transition: color ease 1s;
+  transition: background-color ease 0.5s;
+}
+.container .box .header .streams li:hover {
+  color: #000;
+}
+.container .box .header .streams li:active {
+  background-color: #f1f1f1;
+  transition: background-color ease 0s;
+}
+.container .box .content .block {
+  padding: 15px;
+  background-color: #f1f1f1;
+  border-bottom: 2px solid #ccc;
+}
+.container .box .content .block .uimage {
+  width: 25%;
+  float: left;
+}
+.container .box .content .block .uimage img {
+  width: 100%;
+}
+.container .box .content .block .uname {
+  width: 50%;
+  float: left;
+  padding: 0.9375em;
+}
+.container .box .content .block .ustatus {
+  width: 25%;
+  float: right;
+  padding: 0.9375em;
+}
+.container .box .content .block .clear {
+  clear: both;
+}
+.container .box .footer {
+  padding: 15px;
+}
+.container .box .footer p {
+  color: #ccc;
+}
+.container .box .footer p a {
+  color: #c4c4c4;
+  text-decoration: none;
+}
+.container .box .footer p :hover {
+  color: #1baef1;
+}
+</style>
+<script>
+var d = document;
+var body = d.body;
+var clientSK = "rfs90i1xrn9ui9kzcflj3r0p5ddyt4";
+var sl = d.getElementById("stream-links");
+var contentHolder = d.getElementsByClassName("content")[0]; //contentHolder
+var jsonp = function(url) {
+	var script = document.createElement("script");
+	script.src = encodeURI(url + "detectContent");
+	script.async = true;
+	script.addEventListener("load", function(e) {
+		body.removeChild(script);
+	});
+	script.addEventListener("error", function(e) { 
+		console.error(e);
+		body.removeChild(script);
+	});
+	body.appendChild(script);
+};
+var updateContent = function(r,rtype) {
+	if(rtype && !r.hasOwnProperty("error")) {
+		var content = "";
+		switch (rtype) {
+			case "featured":
+				// loop with for - call contentTemplate function
+				for(var c = 0; c < r.length; c++) {
+					content += contentTemplate(r[c].stream.channel.name,r[c].stream.channel.logo,r[c].stream.channel.name,r[c].stream.channel.status);
+				}
+				break;
+			case "online":
+				for(var c = 0; c < r.length; c++) {
+					content += contentTemplate(r[c].channel.name,r[c].channel.logo,r[c].channel.display_name,r[c].channel.status);
+				}
+				break;
+			case "fcc":
+				content += contentTemplate(r.name,r.logo,r.display_name,r.status);
+				break;
+			default: 
+				console.warn("Unknown content type");
+		}
+		contentHolder.innerHTML = content;
+	} else {
+		if(r.hasOwnProperty("error")) {
+			return {error: "Check the API for any errors."};
+		}
+		return { error: "Type of content is missing."};
+	}
+}
+var detectContent = function(r) {
+	var content = "";
+	var length;
+	if(r.hasOwnProperty("featured")) {
+		updateContent(r.featured,"featured");
+	} else if(r.hasOwnProperty("streams")) {
+		updateContent(r.streams,"online");
+	} else if(r.stream !== undefined && r.stream === null)  {
+		if(r) {
+			var l = r._links.channel + "?client_id=" + clientSK + "&callback=";
+			r = r.stream;
+			jsonp(l);
+		}
+	} else if(r.name == "freecodecamp") {
+		updateContent(r,"fcc");
+	}
+};
+
+document.onreadystatechange = function () {
+    if (document.readyState === "interactive") {
+        jsonp("https://api.twitch.tv/kraken/streams/featured?limit=3&client_id=" + clientSK + "&callback=")
+    }
+};
+var dContent = function(el) {
+	switch (el.id) {
+		case "s1":
+			jsonp("https://api.twitch.tv/kraken/streams/featured?limit=3&client_id=" + clientSK + "&callback=")
+			break;
+		case "s2":
+			jsonp("https://api.twitch.tv/kraken/streams/?limit=3&client_id=" + clientSK + "&callback=");
+			break;
+		case "s3":
+			jsonp("https://api.twitch.tv/kraken/streams/freecodecamp?client_id=" + clientSK + "&callback=");
+			break;
+	}
+	var elCN = el.className;
+	if(!elCN.match("active") && !(el.nodeName == "UL")) {
+		var arr = Array.prototype.slice.call(arguments[1].children); 
+		var ael = arr.filter(function(el) {
+								return el.className.match("active") !== null;
+							});
+		ael[0].className = "";
+		el.className = "active";
+	}
+}
+var contentTemplate = function(curl, src, name, status) { 
+	return "<div class=\"block\">"+
+								 "\t<div class=\"uimage\">"+
+							   "\t\t<a href=\"" + "http://twitch.tv/" + curl + "\" target=\"_blank\">"+
+								 "\t\t\t<img src=\"" + src + "\">"+
+								 "\t\t</a>"+
+								 "\t</div>"+
+								 "\t<div class=\"uname\"><a href=\"" + "http://twitch.tv/" + curl + "\">" + name + "</a></div>"+
+								 "\t<div class=\"ustatus\">" + status + "</div>"+
+								 "\t<div class=\"clear\"></div>\n</div>";
+}
+sl.onclick = function (el) {
+	dContent(el.target,this);
+}
+</script>
+</body>
+</html>
