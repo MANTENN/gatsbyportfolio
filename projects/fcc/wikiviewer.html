@@ -3,7 +3,6 @@
 <head>
   <title>Wikipedia Viewer</title>
 </head>
-<body>
 <style class="cp-pen-styles">@import url("https://fonts.googleapis.com/css?family=Lato:700,700i,900,900i");
 * {
   margin: 0;
@@ -106,7 +105,7 @@ a:hover {
   </div>
 </div>
 <div class="container content"></div>
-<script >
+<script>
 'use strict'
 var protocol = document.URL.split(":")[0]
 var queryEl = document.getElementById("searchQuery")
@@ -144,7 +143,7 @@ var s = {
     if(results)
       var result = document.createElement("div");
       result.className = "searchItems"
-      for(var property in results) {if (window.CP.shouldStopExecution(1)){break;}
+      for(var property in results) {
         var resultTemp = document.createElement("div")
         resultTemp.className = "searchItem"
         resultTemp.innerHTML = "<a href=\"" + protocol + "://" + s.language + ".wikipedia.org/?curid=" + results[property].pageid + "\">\n" +
@@ -153,8 +152,6 @@ var s = {
                            ""
         result.appendChild(resultTemp);
       }
-window.CP.exitedLoop(1);
-
       s.renderResults(result)
   },
   renderResults: function(data) {
@@ -169,84 +166,6 @@ queryEl.addEventListener("keypress", s.wikipedia, true)
 function loadNext(q,num) {
   
 } //add: load next 10 items button or on scroll
-//# sourceURL=pen.js
-</script>
-queryEl.addEventListener("keypress", s.wikipedia, true)
-
-function loadNext(q,num) {
-  
-} //add: load next 10 items button or on scroll
-</script>
-<style class="cp-pen-styles">* {
-  margin: 0;
-  padding: 0;
-}
-body {
-  color: #666;
-  font-size: 1em;
-  font-family: 'Merriweather', serif;
-  background-color: #ccc;
-}
-input[type="text"] {
-  display: block;
-  color: #666;
-  padding: 10px;
-  line-height: 10px;
-  min-width: 350px;
-  background-color: #fff;
-  border: 2px solid #666;
-  outline: none;
-}
-button#searchSubmit {
-  background-color: #fff;
-  border: 2px solid #fff;
-  padding: 10px;
-  line-height: 10px;
-}
-a {
-  color: #666;
-  text-decoration: none;
-  transition: all ease 0.5s;
-}
-a:hover {
-  color: #1baef1;
-}
-.container {
-  margin: auto;
-  max-width: 1200px;
-  padding: 352px;
-  transition: all ease 1s;
-}
-.container.searchResults {
-  padding: 15px;
-}
-.container .center {
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-}
-.container .center .randomArticle {
-  font-size: 18px;
-  padding: 5px;
-  width: 150px;
-  text-align: center;
-  display: block;
-  margin-bottom: 5px;
-  border: 2px solid #1baef1;
-}
-.container .center .randomArticle:hover {
-  color: #fff;
-  background-color: #1baef1;
-}
-.container .center .clearInput:before {
-  content: '';
-  height: 2px;
-  width: 10px;
-  background-color: #fff;
-}
-.container .center {
-  *display: inline;
-}
-</style>
+  </script>
 </body>
 </html>
