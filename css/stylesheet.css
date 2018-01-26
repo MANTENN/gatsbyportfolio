@@ -42,6 +42,11 @@ h2 {
 	display: block;
 	margin-bottom: .8em;
 }
+
+.project .project-badge {
+	font-size: .65em;
+}
+
 h3 {
 	padding-bottom:5px;
 }
