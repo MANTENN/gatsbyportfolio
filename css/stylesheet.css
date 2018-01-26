@@ -1,63 +1,69 @@
-* {margin:0;padding:0;}
-body {
-	color:#CCC;
+/* Table of Contents ----------------------*/
+// Section: 1 
+// Section: 2
+// Section: 3
+// Section: 4
+
+/* Global Settings ---------------------- */
+* {
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+}
+html {
+	color: #444;
 	font: 1em Arial, Helvetica, sans-serif;
 	word-wrap:break-word;
 	padding:15px;
-	background-color:#0E2530;
+	background-color:#fff;
+	padding: 0;
+	height: 100%;
 }
-.social-media a {
-	font-size:1.7em;
-}
-section {
-	margin: 15px auto;
-	max-width: 1200px;
-	padding: 15px;
-	border: 12px solid #11425A;
-	background-color:#103547;
-	box-shadow:0 0 45px rgba(0,0,0,.15);
+body {
+	margin: 0 auto;
+	width: 1200px;
+	border: 2px solid #00000020;
+	border-top: none;
+	border-bottom: none;
+	display: block;
+	box-shadow: 0 0 30px #00000020;
+	min-height: 100%;
 }
 a {
-	color:#1BAEF1;
-	text-decoration:none;
-	text-shadow: 0 10px 28px rgba(47,147,241,.5);
-}
-a:hover {
-	color:#1BB8FF;
-}
-h1 {
-	font-size: 4em;
-	font-weight:100;
-	padding-bottom: 10px;
-}
-div:first-child p {
-	font-size:1.5em;
-}
-h2 {
-	font-size: 1.5em;
-	font-weight:100;
-	padding-bottom: 10px;
-}
-.project {
-	display: block;
-	margin-bottom: .8em;
-}
-
-.project .project-badge {
-	font-size: .65em;
-}
-
-h3 {
-	padding-bottom:5px;
+	color: #1BAEF1;
+	text-decoration: none;
 }
 hr {
-	height:4px;
-	background-color:#104159;
-	max-width:350px;
-	border:none;
-	margin: 25px 0;
+	border-color: #00000020;
+	border-width: 2px;
+	border-bottom: 0;
 }
-.expertise-topic {
-	border:none;
-	margin: 25px 0;
+.col-row {
+	display: flex;
+}
+.col-row:after {
+	content: '';
+	clear: both;
+}
+.col-50 {
+	width: 50%;
+	float: left;
+}
+/* Individual Styling -------------------*/
+.content.porfolio {
+	padding: 1em 2em;
+}
+.content.porfolio h1{
+	font-size: 3em;
+	margin-bottom: .2em;
+}
+.col-50.introduction p{
+	margin-top: 0;
+	font-size: 1.5em;
+}
+.project h3, .project p{
+	margin: .2em;
+}
+.project h3 {
+	margin-top: .8em;
 }
