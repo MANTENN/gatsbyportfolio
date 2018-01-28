@@ -49,6 +49,34 @@ hr {
 	width: 50%;
 	float: left;
 }
+.project h3, .project p{
+	margin: .2em;
+}
+.project h3 {
+	margin-top: .8em;
+}
+/** In Approval Process -------------------**/
+/*
+.project-badges {
+	display: inline-block;
+	font-size: 0.65em;
+	font-weight: bolder;
+	padding: 5px;
+	margin: 0;
+	background: #444;
+	border-radius: 8px;
+}
+.project-badges span {
+	display: inline-block;
+	color: #efefef;
+	border-radius: 5px;
+	border: 2px solid #dedede;
+	padding: 5px 10px;
+}
+span.project-type {
+	color: #fff;
+	border-color: #fff;
+}*/
 /* Individual Styling -------------------*/
 .content.porfolio {
 	padding: 1em 2em;
@@ -61,9 +89,8 @@ hr {
 	margin-top: 0;
 	font-size: 1.5em;
 }
-.project h3, .project p{
-	margin: .2em;
-}
-.project h3 {
-	margin-top: .8em;
-}
+/** In Approval Process -------------------**/
+/*span.project-status {
+	color: #ffffbb;
+	border-color: #ffffbb;
+}*/
