@@ -38,6 +38,9 @@ hr {
 	border-width: 2px;
 	border-bottom: 0;
 }
+header.col-row {
+	align-items: center;
+}
 .col-row {
 	display: flex;
 }
@@ -45,8 +48,19 @@ hr {
 	content: '';
 	clear: both;
 }
+.col-25 {
+	width: 25%;
+}
 .col-50 {
 	width: 50%;
+}
+.col-75 {
+	width: 75%;
+}
+.col-100 {
+	width: 100%;
+}
+.col-25, .col-50, .col-75, .col-100 {
 	float: left;
 }
 .project h3, .project p{
@@ -75,7 +89,7 @@ span.project-type {
 	background-color: #5d5d5d;
 }
 /* Individual Styling -------------------*/
-.content.porfolio {
+header, section, footer {
 	padding: 1em 2em;
 }
 .content.porfolio h1{
