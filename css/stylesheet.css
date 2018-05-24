@@ -1,26 +1,30 @@
-/* Table of Contents ----------------------*/
-// Section: 1 
-// Section: 2
-// Section: 3
-// Section: 4
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&subset=cyrillic,cyrillic-ext');
 
-/* Global Settings ---------------------- */
-* {
-	margin:0;
-	padding: 0;
-	box-sizing: border-box;
-}
+/* Table of Contents ----------------------*/
+/* Section: 1. Global Styles */
+/* Section: 2. Individual Styling */
+/* Section: 3. In-approval */
+
+/* Global Styles ---------------------- */
 html {
 	color: #444;
-	font: 1em Arial, Helvetica, sans-serif;
-	word-wrap:break-word;
-	padding:15px;
+	font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+	word-wrap: break-word;
+	padding: 15px;
 	background-color:#fff;
 	padding: 0;
 	height: 100%;
+	box-sizing: border-box;
+	margin:0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	margin-bottom: .5em;
 }
 body {
 	margin: 0 auto;
+	padding: 0;
 	width: 1200px;
 	border: 2px solid #00000020;
 	border-top: none;
@@ -40,6 +44,7 @@ hr {
 }
 header.col-row {
 	align-items: center;
+	padding: 2.5em 2em;
 }
 .col-row {
 	display: flex;
@@ -98,10 +103,46 @@ header, section, footer {
 }
 .col-50.introduction p{
 	margin-top: 0;
+	font-size: 1em;
+}
+.social-media a {
 	font-size: 1.5em;
+}
+.projects__timeline.col-75 {
+    border-left: 2px solid #dfdfdf;
+    padding-left: 15px;
+    border-radius: 2px;
+}
+.skill {
+	position: relative;
+	margin-bottom: 5px;
+}
+.skill__rating-scale {
+	height: 2em;
+	width: 100%;
+	display: block;
+	background: #dfdfdf;
+	border-radius: 2em 0 0 2em;
+	overflow: hidden;
+}
+.skill__label {
+	position: absolute;
+	padding: 4px 15px;
+	color: #fff;
+}
+.skill__rating {
+	background: #1baef1;
+	height: 1.75em;
+	display: block;
+	margin: 2px;
+	border-radius: 2em;
 }
 /** In Approval Process -------------------**/
 span.project-status {
 	color: #444;
 	background-color: #ffffbb;
+}
+.interest-status.status__active {
+	color: #fff;
+	background-color: green;
 }
