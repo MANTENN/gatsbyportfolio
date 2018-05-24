@@ -108,10 +108,18 @@ header, section, footer {
 .social-media a {
 	font-size: 1.5em;
 }
+aside.col-25 {
+	margin-right: .975em;
+}
 .projects__timeline.col-75 {
     border-left: 2px solid #dfdfdf;
     padding-left: 15px;
     border-radius: 2px;
+}
+.project {
+    border: 2px solid #dfdfdf;
+    border-radius: 1em;
+    padding: 15px;
 }
 .skill {
 	position: relative;
@@ -122,19 +130,19 @@ header, section, footer {
 	width: 100%;
 	display: block;
 	background: #dfdfdf;
-	border-radius: 2em 0 0 2em;
+	border-radius: 2em;
+	padding: .15em;
 	overflow: hidden;
 }
 .skill__label {
 	position: absolute;
-	padding: 4px 15px;
+	padding: 5px 15px;
 	color: #fff;
 }
 .skill__rating {
 	background: #1baef1;
-	height: 1.75em;
+	height: 2em;
 	display: block;
-	margin: 2px;
 	border-radius: 2em;
 }
 /** In Approval Process -------------------**/
@@ -145,4 +153,27 @@ span.project-status {
 .interest-status.status__active {
 	color: #fff;
 	background-color: green;
+}
+
+.start-date {
+	border: 2px solid #dfdfdf;
+	border-radius: 2em;
+	padding: .25em 1em;
+	display: inline-block;
+	font-size: .75em;
+	text-transform: uppercase;
+}
+.project__badges {
+	position: relative;
+}
+.start-date:after {
+	content: '';
+	height: .5em;
+	width: .5em;
+	display: block;
+	position: absolute;
+	background: #1baef1;
+	border-radius: .5em;
+	left: -1.6em;
+	top: 42%;
 }
