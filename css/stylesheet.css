@@ -101,6 +101,9 @@ header, section, footer {
 	font-size: 3em;
 	margin-bottom: .2em;
 }
+.col-50.introduction h1 {
+	margin-bottom: 0;
+}
 .col-50.introduction p{
 	margin-top: 0;
 	font-size: 1em;
@@ -119,7 +122,8 @@ aside.col-25 {
 .project {
     border: 2px solid #dfdfdf;
     border-radius: 1em;
-    padding: 15px;
+	padding: 15px;
+	margin-bottom: 1em;
 }
 .skill {
 	position: relative;
