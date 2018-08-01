@@ -119,7 +119,8 @@ aside.col-25 {
 .project {
     border: 2px solid #dfdfdf;
     border-radius: 1em;
-    padding: 15px;
+	padding: 15px;
+	margin-bottom: 1em;
 }
 .skill {
 	position: relative;
