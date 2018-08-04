@@ -92,6 +92,9 @@ header.col-row {
 span.project-type {
 	color: #ffffff;
 	background-color: #5d5d5d;
+	border-radius: 50px;
+	padding: 5px 15px;
+	font-size: 9pt;
 }
 /* Individual Styling -------------------*/
 header, section, footer {
