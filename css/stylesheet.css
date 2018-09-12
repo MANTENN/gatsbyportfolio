@@ -68,6 +68,14 @@ header.col-row {
 .col-25, .col-50, .col-75, .col-100 {
 	float: left;
 }
+.col-25 {
+	width: 25%;
+	float: left;
+}
+.col-75 {
+	width: 75%;
+	float: left;
+}
 .project h3, .project p{
 	margin: .2em;
 }
