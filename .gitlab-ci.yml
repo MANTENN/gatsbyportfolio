@@ -1,14 +1,14 @@
 pages:
   stage: deploy
+  image: ruby:2.3
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
+    - gem install jekyll
+    - jekyll build -d public/
   artifacts:
     paths:
-    - public
+      - public
   only:
-  - master
+    - master
 ---
   layout: null
   permalink: /.well-known/acme-challenge/uD1g1nr45oXK62Wfj9Cn2UOHeVTrc47lhDeJDRhhLdA
