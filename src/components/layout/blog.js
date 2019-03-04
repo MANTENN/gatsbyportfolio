@@ -1,8 +1,8 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import base from '../base.css'
-import Container from './container'
-import Navigation from './navigation'
+import Container from '../container'
+import Navigation from '../navigation'
 
 class Template extends React.Component {
   render() {
@@ -16,7 +16,7 @@ class Template extends React.Component {
 
     return (
       <Container>
-          <p>Blog Layout!</p> 
+        <p>Blog Layout!</p> 
         <Navigation />
         {children}
       </Container>
