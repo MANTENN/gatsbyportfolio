@@ -18,9 +18,14 @@ class Template extends React.Component {
       <Container>
         <Navigation />
         {children}
+        <p>
+          Built with <a href={"https://www.gatsbyjs.org/"}>Gatsby</a>, Content Provided by <a href={"https://www.contentful.com/"}>Contentful</a>, and Hosted by <a href={"https://www.netlify.com/"}>Netlify</a>.
+        </p>
       </Container>
     )
   }
 }
 
 export default Template
+export { default as Column } from './column'
+export { default as Container } from './container'

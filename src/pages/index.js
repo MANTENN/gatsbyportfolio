@@ -1,10 +1,8 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import get from 'lodash/get'
-import Container from '../components/layout/container'
-import Column from '../components/layout/column'
-import Layout from '../components/layout'
-import Skill from '../components/skill'
+import { Section, SectionLabel, Skill, Education } from '../components'
+import Layout, { Column, Container } from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import SEO from "../components/seo"
 
@@ -13,15 +11,16 @@ class RootIndex extends React.Component {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
     const posts = get(this, 'props.data.allContentfulBlogPost.edges')
     const skills = get(this, 'props.data.allContentfulSkill.edges')
+    const education = get(this, 'props.data.allContentfulEducation.edges')
 
     return (
       <Layout location={this.props.location} >
-        <SEO title="Nazar Maksymchuk | Portfolio" keywords={[`portfolio`, `resume`, `react`, `rust`,`react-native`, `graphql`,`nodejs`]} />
+        <SEO title={siteTitle} keywords={[`portfolio`, `resume`, `react`, `rust`,`react-native`, `graphql`,`nodejs`]} />
         <Container>
-          <Column width={25}>{
-            skills.map(({ node }) => <Skill skill={node}/>)
-          }</Column>
           <Column width={75}>
+          <Section>
+            <SectionLabel>Experience</SectionLabel>
+          </Section>
             <div className="wrapper">
               <h2 className="section-headline">Recent articles</h2>
               <ul className="article-list">
@@ -34,6 +33,20 @@ class RootIndex extends React.Component {
                 })}
               </ul>
             </div>
+          </Column>
+          <Column width={25}>
+            <Section>
+              <SectionLabel>Skills</SectionLabel>
+              {
+                skills.map(({ node }) => <Skill key={node.id} {...node} />)
+              }
+            </Section>
+            <Section>
+              <SectionLabel>Education</SectionLabel>
+              {
+                education.map(({ node }) => <Education key={node.id} {...node} />)
+              }
+            </Section>
           </Column>
         </Container>
       </Layout>
@@ -53,6 +66,7 @@ export const pageQuery = graphql`
     allContentfulSkill(sort: { fields: [createdAt], order: DESC } ) {
     	edges {
         node {
+          id
           name
           confidence
           yearsOfExperience
@@ -77,11 +91,11 @@ export const pageQuery = graphql`
           slug
           publishDate(formatString: "MMMM Do, YYYY")
           tags
-          heroImage {
-            fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-             ...GatsbyContentfulFluid_tracedSVG
-            }
-          }
+          # heroImage {
+          #   fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+          #   ...GatsbyContentfulFluid_tracedSVG
+          #   }
+          # }
           description {
             childMarkdownRemark {
               html
