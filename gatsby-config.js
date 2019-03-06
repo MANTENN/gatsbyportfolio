@@ -1,3 +1,5 @@
+const path = require('path')
+
 let contentfulConfig
 
 try {
