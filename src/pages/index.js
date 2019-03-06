@@ -5,6 +5,7 @@ import Helmet from 'react-helmet'
 import Column from '../components/layout/column'
 import Layout from '../components/layout'
 import ArticlePreview from '../components/article-preview'
+import SEO from "../components/seo"
 
 class RootIndex extends React.Component {
   render() {
@@ -13,6 +14,7 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} >
+        <SEO title="Nazar Maksymchuk | Portfolio" keywords={[`portfolio`, `resume`, `react`, `rust`,`react-native`, `graphql`,`nodejs`]} />
         <Column width={25}>left</Column>
         <Column width={75}>
         <div style={{ background: '#fff' }}>
