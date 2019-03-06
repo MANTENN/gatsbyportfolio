@@ -23,7 +23,9 @@ if (!spaceId || !accessToken) {
 
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Contentful starter',
+    title: 'Nazar Maksymchuk',
+    description: "Nazar Maksymchuk's",
+    author: "Nazar Maksymchuk"
   },
   pathPrefix: '/gatsby-contentful-starter',
   plugins: [

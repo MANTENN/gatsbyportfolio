@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 import get from 'lodash/get'
-import Helmet from 'react-helmet'
 import styles from './blog.module.css'
 import Layout from "../components/layout"
 import ArticlePreview from '../components/article-preview'
+import SEO from '../components/seo'
 
 class BlogIndex extends React.Component {
   render() {
@@ -13,8 +13,8 @@ class BlogIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} >
+        <SEO title={"Blog"} keywords={[`blog`, `mongodb`, `react`, `rust`,`react-native`, `graphql`,`nodejs`]} />
         <div style={{ background: '#fff' }}>
-          <Helmet title={siteTitle} />
           <div className={styles.hero}>
             Blog
           </div>

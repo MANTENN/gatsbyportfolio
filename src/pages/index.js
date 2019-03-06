@@ -14,11 +14,8 @@ class RootIndex extends React.Component {
 
     return (
       <Layout location={this.props.location} >
-        <SEO title="Nazar Maksymchuk | Portfolio" keywords={[`portfolio`, `resume`, `react`, `rust`,`react-native`, `graphql`,`nodejs`]} />
-        <Column width={25}>left</Column>
-        <Column width={75}>
+        <SEO title={"Portfolio"} keywords={[`portfolio`, `resume`, `react`, `rust`,`react-native`, `graphql`,`nodejs`]} />
         <div style={{ background: '#fff' }}>
-            <Helmet title={siteTitle} />
             <div className="wrapper">
               <h2 className="section-headline">Recent articles</h2>
               <ul className="article-list">
@@ -32,7 +29,6 @@ class RootIndex extends React.Component {
               </ul>
             </div>
           </div>
-        </Column>
       </Layout>
     )
   }
@@ -76,7 +72,7 @@ export const pageQuery = graphql`
           tags
           heroImage {
             fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
-             ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid_tracedSVG
             }
           }
           description {
