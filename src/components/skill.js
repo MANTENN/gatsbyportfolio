@@ -8,7 +8,7 @@ export default ({ name, confidence, yearsOfExperience }) => {
             <ConfidenceMeter title={"Confidence Meter"}>{confidence}%</ConfidenceMeter>
         </Header>
         <Experience>
-            {yearsOfExperience} years
+            {yearsOfExperience} year{yearsOfExperience > 1 && "s"}
         </Experience>
     </SkillContainer>;
 }
