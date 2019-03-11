@@ -1,11 +1,35 @@
+image: node:latest
+
+stages:
+  - build
+  - test
+  - deploy
+  - cleanup
+
+# This folder is cached between builds
+# http://docs.gitlab.com/ce/ci/yaml/README.html#cache
+cache:
+  paths:
+    - node_modules/
+
 pages:
   stage: deploy
   script:
-  - mkdir .public
-  - cp -r * .public
-  - mv .public public
+    - npm run build
   artifacts:
     paths:
-    - public
+      - public
+  when: on_success
   only:
-  - master
+    - master
+
+test:
+  stage: test
+  script: 
+    - npm run test
+
+cleanup_job:
+  stage: cleanup
+  script:
+    - yarn cleanup-repository after jobs
+  when: always
