@@ -6,6 +6,10 @@ stages:
   - deploy
   - cleanup
 
+# Install prior to executing any npm commands
+before_script:
+  - npm install
+
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
 cache:
