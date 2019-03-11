@@ -1,0 +1,20 @@
+{
+  "name": "Portfolio",
+  "description": "Nazar Maksymchuk's Portfolio.",
+  "keywords": [
+    "contentful",
+    "gatsby",
+    "static",
+    "ssg"
+  ],
+  "repository": "https://gitlab.com/mntn/Portfolio/",
+  "success_url": "/",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    },
+    {
+      "url": "https://github.com/heroku/heroku-buildpack-static"
+    }
+  ]
+}
