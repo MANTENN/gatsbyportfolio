@@ -30,13 +30,6 @@ module.exports = {
   pathPrefix: '/',
   plugins: [
     {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `images`,
-        path: path.join(__dirname, `src`, `images`),
-      },
-    },
-    {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
