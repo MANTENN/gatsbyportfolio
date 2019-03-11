@@ -27,7 +27,7 @@ module.exports = {
     description: 'Portfolio',
     author: 'Nazar Maksymchuk'
   },
-  pathPrefix: '/gatsby-contentful-starter',
+  pathPrefix: '/',
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,

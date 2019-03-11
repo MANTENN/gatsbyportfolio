@@ -4,19 +4,19 @@ import Img from 'gatsby-image'
 
 import styles from './article-preview.module.css'
 
-export default ({ article }) => (
+export default ({ heroImage, slug, title, publishDate, description, tags }) => (
   <div className={styles.preview}>
-    <Img alt="" fluid={article.heroImage.fluid} />
+    <Img alt="" fluid={heroImage.fluid} />
     <h3 className={styles.previewTitle}>
-      <Link to={`/blog/${article.slug}`}>{article.title}</Link>
+      <Link to={`/blog/${slug}`}>{title}</Link>
     </h3>
-    <small>{article.publishDate}</small>
+    <small>{publishDate}</small>
     <p
       dangerouslySetInnerHTML={{
-        __html: article.description.childMarkdownRemark.html,
+        __html: description.childMarkdownRemark.html,
       }}
     />
-    {article.tags.map(tag => (
+    {tags.map(tag => (
       <p className={styles.tag} key={tag}>
         {tag}
       </p>

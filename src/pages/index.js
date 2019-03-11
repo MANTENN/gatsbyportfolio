@@ -6,6 +6,7 @@ import Layout, { Column, Container } from '../components/layout'
 import ArticlePreview from '../components/article-preview'
 import SEO from "../components/seo"
 
+
 class RootIndex extends React.Component {
   render() {
     const siteTitle = get(this, 'props.data.site.siteMetadata.title')
@@ -21,25 +22,23 @@ class RootIndex extends React.Component {
         <Container>
           <Column width={75}>
             <Section>
-              <SectionLabel>Experience</SectionLabel>
-              { workHistory.map(({ node }) => {
-                  // return node.company;
-                  return (<WorkHistory key={node.id} {...node} />)
-                })
-              }
-            </Section>
-            <Section>
               <SectionLabel>Recent Articles</SectionLabel>
               <ul className="article-list">
               {recentArticles.map(({ node }) => {
                 return (
                   <li key={node.slug}>
-                        {node.company}
-                        <ArticlePreview article={node} />
+                        <ArticlePreview {...node} />
                       </li>
                 )
               })}
               </ul>
+            </Section>
+            <Section>
+              <SectionLabel>Experience</SectionLabel>
+              { workHistory.map(({ node }) => {
+                  return (<WorkHistory key={node.id} {...node} />)
+                })
+              }
             </Section>
           </Column>
           <Column width={25}>
@@ -104,6 +103,11 @@ export const pageQuery = graphql`
           id
           company
           website
+          startDate
+          endDate
+          position {
+            name
+          }
           description {
             childMarkdownRemark {
               html
@@ -112,6 +116,11 @@ export const pageQuery = graphql`
           projects {
             id
             name
+            heroImage {
+              fluid(maxWidth: 350, maxHeight: 196, resizingBehavior: SCALE) {
+                ...GatsbyContentfulFluid_tracedSVG
+              }
+            }
             description {
               childMarkdownRemark {
                 html

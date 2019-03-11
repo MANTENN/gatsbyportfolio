@@ -1,13 +1,13 @@
 {
-  "name": "Contentful Gatsby Starter",
-  "description": "Gatsby starter for a Contentful project.",
+  "name": "Portfolio",
+  "description": "Nazar Maksymchuk's Portfolio.",
   "keywords": [
     "contentful",
     "gatsby",
     "static",
     "ssg"
   ],
-  "repository": "https://github.com/contentful-userland/gatsby-contentful-starter",
+  "repository": "https://gitlab.com/mntn/Portfolio/",
   "success_url": "/",
   "buildpacks": [
     {
