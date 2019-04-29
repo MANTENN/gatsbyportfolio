@@ -41,3 +41,11 @@ cleanup_job:
   script:
     - yarn cleanup-repository after jobs
   when: always
+
+ netlify:
+   stage: build
+   artifacts:
+     paths:
+       - public
+   only:
+     - master
