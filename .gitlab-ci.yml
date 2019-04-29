@@ -8,7 +8,7 @@ stages:
 
 # Install prior to executing any npm commands
 before_script:
-  - npm install
+  - yarn install
 
 # This folder is cached between builds
 # http://docs.gitlab.com/ce/ci/yaml/README.html#cache
@@ -19,7 +19,7 @@ cache:
 pages:
   stage: deploy
   script:
-    - npm run build
+    - yarn build
   artifacts:
     paths:
       - public
@@ -34,7 +34,7 @@ pages:
 test:
   stage: test
   script: 
-    - npm run test
+    - yarn test
 
 cleanup_job:
   stage: cleanup
