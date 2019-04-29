@@ -16,10 +16,5 @@ export default ({ heroImage, slug, title, publishDate, description, tags }) => (
         __html: description.childMarkdownRemark.html,
       }}
     />
-    {tags.map(tag => (
-      <p className={styles.tag} key={tag}>
-        {tag}
-      </p>
-    ))}
   </div>
 )

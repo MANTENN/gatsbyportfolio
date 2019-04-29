@@ -10,7 +10,8 @@ try {
 // Overwrite the Contentful config with environment variables if they exist
 contentfulConfig = {
   spaceId: process.env.CONTENTFUL_SPACE_ID || contentfulConfig.spaceId,
-  accessToken: process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
+  accessToken:
+    process.env.CONTENTFUL_DELIVERY_TOKEN || contentfulConfig.accessToken,
 }
 
 const { spaceId, accessToken } = contentfulConfig
@@ -25,10 +26,25 @@ module.exports = {
   siteMetadata: {
     title: 'Nazar Maksymchuk | Portfolio',
     description: 'Portfolio',
-    author: 'Nazar Maksymchuk'
+    author: 'Nazar Maksymchuk',
   },
   pathPrefix: '/',
   plugins: [
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto Slab`,
+            subsets: [`latin`],
+            variants: [`400`, `700`],
+          },
+          {
+            family: `Open Sans`,
+          },
+        ],
+      },
+    },
     {
       resolve: `gatsby-plugin-styled-components`,
       options: {
@@ -36,12 +52,18 @@ module.exports = {
       },
     },
     'gatsby-transformer-remark',
-    'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-transformer-sharp',
+      options: {
+        name: 'path',
+        path: `${__dirname}/src/pages`,
+      },
+    },
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sharp',
     {
       resolve: 'gatsby-source-contentful',
       options: contentfulConfig,
-    }
+    },
   ],
 }
