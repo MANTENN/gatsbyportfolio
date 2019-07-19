@@ -13,11 +13,7 @@ export default ({
 }) => {
   return (
     <WorkHistoryContainer>
-      <a href={website} style={{ textDecoration: 'none' }}>
-        <Name>{company}</Name>
-      </a>
       <Tags>
-        <Tag>{position.name}</Tag>
         <Tag>
           <Moment format={'MM/DD/YYYY'}>{startDate}</Moment> &nbsp;-&nbsp;
           {endDate ? (
@@ -26,6 +22,12 @@ export default ({
             'Present'
           )}
         </Tag>
+      </Tags>
+      <a href={website} style={{ textDecoration: 'none' }}>
+        <Name>{company}</Name>
+      </a>
+      <Tags>
+        <Tag>{position.name}</Tag>
       </Tags>
       <Description
         dangerouslySetInnerHTML={{
