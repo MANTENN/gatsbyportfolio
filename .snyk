@@ -1,8 +1,41 @@
 # Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
-version: v1.13.3
+version: v1.13.5
 ignore: {}
 # patches apply the minimum changes required to fix a vulnerability
 patch:
   SNYK-JS-AXIOS-174505:
     - gatsby-source-contentful > axios:
         patched: '2019-05-07T03:30:27.105Z'
+  SNYK-JS-LODASH-450202:
+    - gatsby-source-contentful > deep-map > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-source-contentful > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-plugin-sharp > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - babel-plugin-styled-components > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-source-contentful > gatsby-plugin-sharp > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - styled-components > babel-plugin-styled-components > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-plugin-sharp > async > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-transformer-remark > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-source-contentful > contentful > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - babel-plugin-styled-components > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - styled-components > @babel/helper-module-imports > @babel/types > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-source-contentful > contentful > contentful-resolve-response > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-source-contentful > contentful > contentful-sdk-core > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - gatsby-source-contentful > gatsby-plugin-sharp > async > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
+    - styled-components > babel-plugin-styled-components > @babel/helper-annotate-as-pure > @babel/types > lodash:
+        patched: '2019-07-04T03:36:17.272Z'
